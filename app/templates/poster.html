@@ -1,0 +1,23 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="blog-post">
+    <form method="post" action="" role="form">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <b>Title:</b>
+        {{ form.title(size=55,class='form-control') }}<br>
+        <b>Category:</b>
+        {{ form.category(class='form-control') }}<br>
+        <b>Body:</b>
+        {{ form.body(rows='40',cols='75',class='form-control')|safe }}<br>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+
+</div><!-- /.blog-post -->
+
+
+{% endblock %}

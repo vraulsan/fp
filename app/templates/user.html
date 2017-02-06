@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="blog-post">
+    <img src="{{ user.avatar }}">
+    <h2 class="blog-post-title">User: {{ user.nickname }} !</h2>
+    <hr>
+    {% for p in user.posts %}
+    <p>
+        Edit: <a href="{{ url_for('postedit', id=p.id) }}">{{ p.title }}</a> - <a href="{{ url_for('postdelete', id=p.id) }}">Delete</a>
+    </p>
+    {% endfor %}
+    <hr>
+    <a href="{{ url_for('poster') }}">Create new</a>
+</div>
+{% endblock %}

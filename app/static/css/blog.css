@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+/*
+ * Globals
+ */
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: normal
+  font-size: 15px;
+  color: #555;
+}
+
+a:hover{
+    text-decoration: none;
+    }
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+  font-size: 15px;
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+    font-size: 15px;
+  }
+}
+
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+  background-color: #683F98;
+  font-size: 15px;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+/* Nav links */
+.blog-nav-item {
+  font-family: Roboto, Georgia;
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #e2d7ee;
+}
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.blog-nav .hover {
+    color: #fff;
+    background-color: #fff;
+    }
+
+/* Active state gets a caret at the bottom */
+.blog-nav .active {
+  color: #fff;
+  font-size:
+}
+.blog-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+}
+
+
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: normal;
+}
+.blog-description {
+  font-size: 20px;
+  color: #999;
+}
+
+
+/*
+ * Main column and sidebar layout : THIS IS THE POSTS STYLE
+ */
+
+.blog-main {
+  font-family: Roboto, Georgia;
+  font-weight: light;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content : THIS IS THE SIDEBAR LIKE ABOUT AND ARCHIVES STYLE */
+.sidebar-module {
+  font-family: Roboto, Georgia;
+  padding: 15px;
+  margin: 0 -15px 15px;
+  font-size: 15px;
+  line-height: 180%;
+}
+.sidebar-module-inset {
+  font-family: Roboto, Georgia;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  font-family: Roboto;
+  margin-bottom: 60px;
+  font-size: 15px;
+  text-align: justify;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  font-size: 17px;
+  color: #999;
+}
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+  padding: 40px 0;
+  color: #999;
+  font-family: Roboto, Georgia;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+#blog.navbar-default .navbar-brand {
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+}
+#blog.navbar-default {
+    font-weight: bold;
+    background-color: rgba(99, 5, 133, 1);
+    border-bottom-width: 10px;
+}
+#blog.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(99, 5, 133, 1);
+    font-size: 16px;
+}
+#blog.navbar-default .navbar-nav>li>a:hover,
+#blog.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(245, 245, 245, 1);
+}
+#blog.navbar-default .navbar-nav>.active>a,
+#blog.navbar-default .navbar-nav>.active>a:hover,
+#blog.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(5, 2, 2, 1);
+    background-color: rgba(245, 245, 245, 1);
+}
+#blog.navbar-default .navbar-toggle {
+    border-color: rgba(99, 5, 133, 1);
+
+}
+#blog.navbar-default .navbar-toggle:hover,
+#blog.navbar-default .navbar-toggle:focus {
+    background-color: #f5f5f5;
+}
+#blog.navbar-default .navbar-toggle .icon-bar {
+    background-color: #f5f5f5;
+}
+#blog.navbar-default .navbar-toggle:hover .icon-bar,
+#blog.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #630585;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    font-width: normal;
+    padding: 9.5px;
+    margin: 0 0 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 0px solid white;
+    border-radius: 5px;
+}

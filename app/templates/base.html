@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300">
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>fireprotocol</title>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/blog.css') }}">
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+  </head>
+<!-- ################################################################ -->
+<!-- ################################################################ -->
+
+<!-- ######################### HEADER NAVBAR ############################### -->
+  <body>
+
+<div id="blog" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="#">FIREPROTOCOL</a> </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-default pull-left">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#">Channel</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-default pull-right">
+                <li class="dropdown">
+                  {% if g.user.is_authenticated %}
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ g.user.nickname }}<strong class="caret"></strong></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="{{ url_for('user', nickname=g.user.nickname) }}">Profile</a>
+                    </li>
+                    <li>
+                      <a href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                    {% else %}
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<strong class="caret"></strong></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/login">Login</a>
+                    </li>
+                  </ul>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+      <div class="blog-header">
+        <p></p>
+        <p></p>
+        <br>
+        <br>
+        <p></p>
+        <p></p>
+        <br>
+        <br>
+      </div>
+
+      <div class="row">
+<!-- ######################### END HEADER NAVBAR ############################### -->
+
+
+        <div class="col-sm-8 blog-main">
+            {% block content %}
+          {% endblock %}
+        </div><!-- /.blog-main -->
+
+<!-- ######################### SIDE BAR ########################### -->
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+              <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>Hey I'm Victor, I enjoy writing articles on networking, virtualization and automation, as well as recording tutorial videos for my <a href="https://youtube.com/c/victorfp">youtube channel</a>.</p>
+              </div>
+              <div class="sidebar-module">
+                <h4>Categories</h4>
+                <ol class="list-unstyled">
+                    {% for c in cats %}
+                  <li><a href="{{ url_for('category', name=c.name) }}">{{ c.name }}</a></li>
+                    {% endfor %}
+                </ol>
+              </div>
+              <div class="sidebar-module sidebar-module-inset">
+                <h4>Find me on</h4>
+                <ol class="list-unstyled">
+                  <li><a href="#">GitHub</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Facebook</a></li>
+                  <LI><A HREF='#'>Linkedin</a></li>
+                </ol>
+              </div>
+            </div>
+
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+<!-- ######################### END SIDE BAR ########################### -->
+
+
+
+    <footer class="blog-footer">
+      <p>fireprotocol flask application by <a href="https://www.linkedin.com/in/victor-r-sanchez-m-67632bb6/">Victor</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

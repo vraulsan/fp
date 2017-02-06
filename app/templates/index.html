@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- THIS IS FOR FLASHED MESSAGES-->
+    <div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'message' %}
+                <div class="alert alert-warning alert-dismissable fade in" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {% else %}
+                <div class="alert alert-{{ category }} alert-dismissable fade in" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {% endif %}
+                {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div><!-- END OF FLASHED MESSAGES-->
+
+    <div class="blog-post">
+        {% for post in posts %}
+        <h2 class="blog-post-title"><a href="{{ url_for('posttitle', title=post.title) }}">{{ post.title }}</a></h2>
+        <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author.name }}</a> in <a href="#">{{ post.category.name }}</a></p></a>
+            {{ post.body|safe }}
+        <p></p>
+        <br>
+        <hr>
+        <p></p>
+        <br>
+        {% endfor %}
+    </div><!-- /.blog-post -->
+{% endblock %}

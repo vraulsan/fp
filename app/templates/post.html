@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="blog-post">
+            <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">{{ post.timestamp }} by <a href="#">{{ post.author.name }}</a> in <a href="#">{{ post.category }}</a></p></a>
+            {{ post.body|safe }}
+    </div><!-- /.blog-post -->
+{% endblock %}
